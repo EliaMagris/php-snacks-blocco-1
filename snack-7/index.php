@@ -21,20 +21,12 @@ $array = [
     ]
 ];
 
-foreach ($array as $value) {
-    echo "<ul>";
-    echo $value['name'];
-    echo (', ');
-    echo $value['lastname'];
-    echo (', ');
-    echo $value['vote'];
-    echo (', ');
-    echo "</ul>";
-    // foreach ($value as $text) {
-    //     echo "<ul>";
-    //     echo $text['vote'];
-    //     echo "</ul>";
-    // }
+for ($i = 0; $i < count($array); $i++){
+
+    $mediaVoti = array_sum($array[$i]['vote']) / count($array[$i]['vote']);
+
+    echo $array[$i]['name'] . '-' . $array[$i]['lastname']. ":" .'la media dei voti è'. ':' .$mediaVoti;
+    echo "<br>";
 }
 
 

@@ -44,7 +44,9 @@ $posts = [
         ]
     ],
 ];
-?>
+
+$arrayDate = array_keys($posts)
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,36 +61,41 @@ $posts = [
 <body>
 
     <?php
-    // for ($row = 0; $row < count($posts); $row++) {
-    //     echo "<p><b> $row</b></p>";
-    //     echo "<ul>";
-    //     for ($col = 0; $col < count([$row]); $col++) {
-    //         echo "<li>" . $posts[$row][$col]['title'] . '-' . $posts[$row][$col]['author'] . '-' . $posts[$row][$col]['text'] .
-    //             "</li>";
+    for ($i = 0; $i < count($posts); $i++) {
+        echo $arrayDate[$i];
+        echo "<br>";
 
-    //     }
-    //     echo "</ul>";
-    // }
-
-    // non riesco a farlo funzionare 
-
-    foreach ($posts as $date => $value) {
-        echo "<ul>";
-        echo "<li>$date</li>" ;
-        echo "</ul>";
-
-        foreach ($value as $text) {
-            echo "<ul>";
-            echo $text['title'];
-            echo (', ');
-            echo $text['author'];
-            echo (', ');
-            echo $text['text'];
-            echo (', ');
-            echo "</ul>";
+        for ($k = 0; $k < count($posts[$arrayDate[$i]]); $k++) {
+            echo $posts[$arrayDate[$i]][$k]['title'];
+            echo "<br>";
+            echo $posts[$arrayDate[$i]][$k]['author'];
+            echo "<br>";
+            echo $posts[$arrayDate[$i]][$k]['text'];
+            echo "<br>";
+            echo "<br>";
         }
-    }
 
+    };
+
+
+
+    // foreach ($posts as $date => $value) {
+    //     echo "<ul>";
+    //     echo "<li>$date</li>" ;
+    //     echo "</ul>";
+    
+    //     foreach ($value as $text) {
+    //         echo "<ul>";
+    //         echo $text['title'];
+    //         echo (', ');
+    //         echo $text['author'];
+    //         echo (', ');
+    //         echo $text['text'];
+    //         echo (', ');
+    //         echo "</ul>";
+    //     }
+    // }
+    
     ?>
 </body>
 
